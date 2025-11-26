@@ -64,6 +64,5 @@ nexusPublishing {
             password.set(System.getenv("ossrhPassword") ?: "")
         }
     }
-    // todo find a better way to determine if we are in a staging or release build
     useStaging.set(!project.rootProject.version.toString().endsWith("-SNAPSHOT"))
 }
