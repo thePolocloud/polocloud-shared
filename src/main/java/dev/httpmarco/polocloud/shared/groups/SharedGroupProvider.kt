@@ -1,6 +1,5 @@
 package dev.httpmarco.polocloud.shared.groups
 
-import dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.groups.Group
 import java.util.concurrent.CompletableFuture
 
 /**

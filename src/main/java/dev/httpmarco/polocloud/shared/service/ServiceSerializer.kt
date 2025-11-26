@@ -8,7 +8,6 @@ import com.google.gson.JsonSerializationContext
 import com.google.gson.JsonSerializer
 import com.google.gson.reflect.TypeToken
 import dev.httpmarco.polocloud.shared.PolocloudSharedKeys
-import dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.service.ServiceInformation
 import dev.httpmarco.polocloud.shared.template.Template
 import dev.httpmarco.polocloud.v1.GroupType
 import dev.httpmarco.polocloud.v1.services.ServiceState

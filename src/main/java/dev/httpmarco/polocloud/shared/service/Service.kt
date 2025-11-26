@@ -2,7 +2,6 @@ package dev.httpmarco.polocloud.shared.service
 
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
-import dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.service.ServiceInformation
 import dev.httpmarco.polocloud.shared.PolocloudSharedKeys
 import dev.httpmarco.polocloud.shared.template.Template
 import dev.httpmarco.polocloud.shared.polocloudShared

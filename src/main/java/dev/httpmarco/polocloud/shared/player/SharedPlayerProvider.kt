@@ -1,6 +1,5 @@
-package dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.player
+package dev.httpmarco.polocloud.shared.player
 
-import dev.httpmarco.polocloud.shared.player.PolocloudPlayer
 import dev.httpmarco.polocloud.shared.service.Service
 import java.util.concurrent.CompletableFuture
 

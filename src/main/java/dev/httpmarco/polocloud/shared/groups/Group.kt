@@ -1,11 +1,11 @@
-package dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.groups
+package dev.httpmarco.polocloud.shared.groups
 
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.google.gson.JsonPrimitive
 import dev.httpmarco.polocloud.shared.PolocloudSharedKeys
-import dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.platform.PlatformIndex
-import dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.properties.PropertyHolder
+import dev.httpmarco.polocloud.shared.platform.PlatformIndex
+import dev.httpmarco.polocloud.shared.properties.PropertyHolder
 import dev.httpmarco.polocloud.shared.template.Template
 import dev.httpmarco.polocloud.v1.groups.GroupSnapshot
 

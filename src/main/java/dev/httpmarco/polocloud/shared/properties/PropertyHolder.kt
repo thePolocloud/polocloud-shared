@@ -1,9 +1,8 @@
-package dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.properties
+package dev.httpmarco.polocloud.shared.properties
 
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonElement
 import com.google.gson.JsonPrimitive
-import dev.httpmarco.polocloud.shared.properties.Property
 
 private val propertySerializer = GsonBuilder().serializeNulls().create()
 

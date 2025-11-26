@@ -1,6 +1,5 @@
-package dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.template
+package dev.httpmarco.polocloud.shared.template
 
-import dev.httpmarco.polocloud.shared.template.Template
 import java.util.concurrent.CompletableFuture
 
 /**

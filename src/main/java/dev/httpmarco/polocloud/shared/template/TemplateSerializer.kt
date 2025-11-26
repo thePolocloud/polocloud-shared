@@ -1,4 +1,4 @@
-package dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.template
+package dev.httpmarco.polocloud.shared.template
 
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer
@@ -6,11 +6,10 @@ import com.google.gson.JsonElement
 import com.google.gson.JsonPrimitive
 import com.google.gson.JsonSerializationContext
 import com.google.gson.JsonSerializer
-import dev.httpmarco.polocloud.shared.template.Template
 import java.lang.reflect.Type
 
 /**
- * JSON serializer and deserializer for the [dev.httpmarco.polocloud.shared.template.Template] class.
+ * JSON serializer and deserializer for the [Template] class.
  *
  * Serializes a Template to its name as a JSON string and deserializes
  * a JSON string back to a Template instance.

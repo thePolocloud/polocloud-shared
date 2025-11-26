@@ -3,9 +3,9 @@ package dev.httpmarco.polocloud.shared
 import dev.httpmarco.polocloud.shared.groups.SharedGroupProvider
 import dev.httpmarco.polocloud.shared.information.SharedCloudInformationProvider
 import dev.httpmarco.polocloud.shared.platform.SharedPlatformProvider
-import dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.player.SharedPlayerProvider
+import dev.httpmarco.polocloud.shared.player.SharedPlayerProvider
 import dev.httpmarco.polocloud.shared.service.SharedServiceProvider
-import dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.template.SharedTemplateProvider
+import dev.httpmarco.polocloud.shared.template.SharedTemplateProvider
 import dev.httpmarco.polocloud.shared.events.SharedEventProvider
 import kotlin.properties.Delegates
 

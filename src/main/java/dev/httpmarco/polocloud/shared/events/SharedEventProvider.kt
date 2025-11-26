@@ -2,13 +2,12 @@ package dev.httpmarco.polocloud.shared.events
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.events.Event
 import dev.httpmarco.polocloud.shared.player.PlayerSerializer
 import dev.httpmarco.polocloud.shared.player.PolocloudPlayer
 import dev.httpmarco.polocloud.shared.service.Service
 import dev.httpmarco.polocloud.shared.service.ServiceSerializer
 import dev.httpmarco.polocloud.shared.template.Template
-import dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.template.TemplateSerializer
+import dev.httpmarco.polocloud.shared.template.TemplateSerializer
 
 /**
  * Abstract provider for shared events in the PoloCloud system.

@@ -1,3 +1,3 @@
-package dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.events
+package dev.httpmarco.polocloud.shared.events
 
 interface Event

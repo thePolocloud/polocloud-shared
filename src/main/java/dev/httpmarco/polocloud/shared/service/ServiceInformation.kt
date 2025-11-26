@@ -1,4 +1,4 @@
-package dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.service
+package dev.httpmarco.polocloud.shared.service
 
 import com.google.gson.Gson
 import dev.httpmarco.polocloud.v1.services.ServiceInformationSnapshot

@@ -1,6 +1,6 @@
 package dev.httpmarco.polocloud.shared.events.definitions.service
 
-import dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.events.Event
+import dev.httpmarco.polocloud.shared.events.Event
 import dev.httpmarco.polocloud.shared.service.Service
 
 /**

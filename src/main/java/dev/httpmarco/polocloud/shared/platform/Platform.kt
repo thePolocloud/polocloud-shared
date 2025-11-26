@@ -1,4 +1,4 @@
-package dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.platform
+package dev.httpmarco.polocloud.shared.platform
 
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
@@ -31,7 +31,7 @@ open class Platform(
             return Platform(
                 name = snapshot.name,
                 type = snapshot.type,
-                versions = snapshot.versionsList.map { PlatformVersion.from(it) }
+                versions = snapshot.versionsList.map { PlatformVersion.Companion.from(it) }
             )
         }
     }

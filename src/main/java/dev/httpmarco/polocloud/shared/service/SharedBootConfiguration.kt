@@ -1,4 +1,4 @@
-package dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.service
+package dev.httpmarco.polocloud.shared.service
 
 import dev.httpmarco.polocloud.shared.template.Template
 

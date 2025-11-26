@@ -1,4 +1,4 @@
-package dev.httpmarco.polocloud.dev.httpmarco.polocloud.shared.platform
+package dev.httpmarco.polocloud.shared.platform
 
 import dev.httpmarco.polocloud.v1.groups.GroupPlatformSnapshot
 
