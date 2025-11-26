@@ -8,27 +8,22 @@ import dev.httpmarco.polocloud.shared.service.SharedServiceProvider
 import dev.httpmarco.polocloud.shared.information.SharedCloudInformationProvider
 import dev.httpmarco.polocloud.shared.platform.SharedPlatformProvider
 import dev.httpmarco.polocloud.shared.template.SharedTemplateProvider
+import kotlin.properties.Delegates
 
-lateinit var polocloudShared: PolocloudShared
+var polocloudShared: PolocloudShared by Delegates.notNull()
+    private set
 
 // setShared is needed because without the flag its impossible
 // to use more than one SDK instance in one process (e.g. off premise bridge)
 abstract class PolocloudShared(setShared: Boolean) {
 
     abstract fun eventProvider(): SharedEventProvider
-
     abstract fun serviceProvider(): SharedServiceProvider<*>
-
     abstract fun groupProvider(): SharedGroupProvider<*>
-
     abstract fun playerProvider(): SharedPlayerProvider<*>
-
     abstract fun cloudInformationProvider(): SharedCloudInformationProvider<*>
-
     abstract fun logger(): Logger
-
     abstract fun platformProvider(): SharedPlatformProvider<*>
-
     abstract fun templateProvider(): SharedTemplateProvider<*>
 
     init {
