@@ -32,7 +32,7 @@ open class Group(
     maxOnlineService: Int,
     startThreshold: Double,
     val platform: PlatformIndex,
-    val createdAt: Timestamp,
+    val createdAt: Long,
     val templates: List<Template>,
     val properties: PropertyHolder
 ) {
@@ -134,7 +134,7 @@ fun Group.toJson(): JsonObject {
         addProperty(PolocloudSharedKeys.MIN_ONLINE, minOnlineService)
         addProperty(PolocloudSharedKeys.MAX_ONLINE, maxOnlineService)
         addProperty(PolocloudSharedKeys.START_THRESHOLD, startThreshold)
-        addProperty(PolocloudSharedKeys.CREATED_AT, createdAt.toString())
+        addProperty(PolocloudSharedKeys.CREATED_AT, createdAt)
         add(PolocloudSharedKeys.PLATFORM, groupPlatform)
         add(PolocloudSharedKeys.TEMPLATES, groupTemplates)
         add(PolocloudSharedKeys.PROPERTIES, groupProperties)
