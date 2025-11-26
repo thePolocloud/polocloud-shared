@@ -40,5 +40,5 @@ abstract class SharedEventProvider {
      * @param eventType the class of the event type to subscribe to
      * @param result a callback function that is invoked when the event is called
      */
-    abstract fun <T : Event> subscribe(eventType: Class<T>, result: (T) -> Any)
+    abstract fun <T : Event> subscribe(eventType: Class<T>, result: EventCallback<T>)
 }
