@@ -8,6 +8,7 @@ import dev.httpmarco.polocloud.shared.platform.PlatformIndex
 import dev.httpmarco.polocloud.shared.properties.PropertyHolder
 import dev.httpmarco.polocloud.shared.template.Template
 import dev.httpmarco.polocloud.v1.groups.GroupSnapshot
+import dev.httpmarco.polocloud.v1.relocated.protobuf.Timestamp
 
 /**
  * Represents a cloud group with memory, service, platform, templates and custom properties.
@@ -18,7 +19,7 @@ import dev.httpmarco.polocloud.v1.groups.GroupSnapshot
  * @property minOnlineService the minimum number of online services
  * @property maxOnlineService the maximum number of online services
  * @property platform the platform this group belongs to
- * @property percentageToStartNewService the threshold percentage to start a new service
+ * @property startThreshold the threshold percentage to start a new service
  * @property createdAt the creation timestamp
  * @property templates the templates associated with this group
  * @property properties additional custom properties of this group
@@ -29,9 +30,9 @@ open class Group(
     maxMemory: Int,
     minOnlineService: Int,
     maxOnlineService: Int,
+    startThreshold: Double,
     val platform: PlatformIndex,
-    percentageToStartNewService: Double,
-    val createdAt: Long,
+    val createdAt: Timestamp,
     val templates: List<Template>,
     val properties: PropertyHolder
 ) {
@@ -48,7 +49,7 @@ open class Group(
     var maxOnlineService: Int = maxOnlineService
         protected set
 
-    var percentageToStartNewService: Double = percentageToStartNewService
+    var startThreshold: Double = startThreshold
         protected set
 
     companion object {
@@ -75,12 +76,12 @@ open class Group(
 
             return Group(
                 name = snapshot.name,
-                minMemory = snapshot.minimumMemory,
-                maxMemory = snapshot.maximumMemory,
-                minOnlineService = snapshot.minimumOnline,
-                maxOnlineService = snapshot.maximumOnline,
+                minMemory = snapshot.minMemory,
+                maxMemory = snapshot.maxMemory,
+                minOnlineService = snapshot.minOnline,
+                maxOnlineService = snapshot.maxOnline,
                 platform = PlatformIndex(snapshot.platform.name, snapshot.platform.version),
-                percentageToStartNewService = snapshot.percentageToStartNewService,
+                startThreshold = snapshot.startThreshold,
                 createdAt = snapshot.createdAt,
                 templates = Template.fromSnapshotList(snapshot.templatesList),
                 properties = propertyHolder
@@ -95,12 +96,12 @@ open class Group(
      */
     fun to(): GroupSnapshot = GroupSnapshot.newBuilder()
         .setName(name)
-        .setMinimumMemory(minMemory)
-        .setMaximumMemory(maxMemory)
-        .setMinimumOnline(minOnlineService)
-        .setMaximumOnline(maxOnlineService)
+        .setMinMemory(minMemory)
+        .setMaxMemory(maxMemory)
+        .setMinOnline(minOnlineService)
+        .setMaxOnline(maxOnlineService)
         .setPlatform(platform.to())
-        .setPercentageToStartNewService(percentageToStartNewService)
+        .setStartThreshold(startThreshold)
         .setCreatedAt(createdAt)
         .addAllTemplates(templates.map { it.to() })
         .putAllProperties(properties.all().mapValues { it.value.toString() })
@@ -132,8 +133,8 @@ fun Group.toJson(): JsonObject {
         addProperty(PolocloudSharedKeys.MAX_MEMORY, maxMemory)
         addProperty(PolocloudSharedKeys.MIN_ONLINE, minOnlineService)
         addProperty(PolocloudSharedKeys.MAX_ONLINE, maxOnlineService)
-        addProperty(PolocloudSharedKeys.PERCENTAGE_TO_START, percentageToStartNewService)
-        addProperty(PolocloudSharedKeys.CREATED_AT, createdAt)
+        addProperty(PolocloudSharedKeys.START_THRESHOLD, startThreshold)
+        addProperty(PolocloudSharedKeys.CREATED_AT, createdAt.toString())
         add(PolocloudSharedKeys.PLATFORM, groupPlatform)
         add(PolocloudSharedKeys.TEMPLATES, groupTemplates)
         add(PolocloudSharedKeys.PROPERTIES, groupProperties)
