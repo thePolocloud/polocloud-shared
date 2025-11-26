@@ -15,16 +15,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Set up Gradle dependencies cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
-
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
@@ -41,4 +31,4 @@ jobs:
         env:
           ossrhUsername: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
           ossrhPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
-        run: ./gradlew publish
+        run: ./gradlew clean publish
