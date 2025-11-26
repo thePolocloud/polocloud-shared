@@ -1,4 +1,4 @@
-rootProject.name = "polocloud-shared"
+rootProject.name = "shared"
 
 pluginManagement {
     repositories {
