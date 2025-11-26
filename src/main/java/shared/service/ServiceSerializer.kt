@@ -18,7 +18,7 @@ class ServiceSerializer : JsonSerializer<Service>, JsonDeserializer<Service> {
         src: Service,
         typeOfSrc: Type,
         context: JsonSerializationContext
-    ): JsonElement? {
+    ): JsonElement {
         val data = JsonObject()
 
         data.addProperty("name", src.groupName)
