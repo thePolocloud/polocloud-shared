@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "dev.httpmarco.polocloud"
-version = "1.0-SNAPSHOT"
+version = "3.0.0-pre.8-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -17,7 +17,7 @@ repositories {
 
 dependencies {
     compileOnly("com.google.code.gson:gson:2.13.2")
-    compileOnly("dev.httpmarco.polocloud:polocloud-proto:3.0.0-pre.8-SNAPSHOT")
+    compileOnly("dev.httpmarco.polocloud:proto:3.0.0-pre.8-SNAPSHOT")
 }
 
 
