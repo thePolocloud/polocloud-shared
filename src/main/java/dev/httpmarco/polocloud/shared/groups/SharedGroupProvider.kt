@@ -73,14 +73,14 @@ interface SharedGroupProvider<G : Group> {
      * @param name the name of the group
      * @return the deleted group if it existed, null otherwise
      */
-    fun delete(name: String): G?
+    fun delete(name: String): Boolean
 
     /**
      * Deletes the given group.
      *
      * @param group the group to delete
      */
-    fun delete(group: G) {
-        delete(group.name)
+    fun delete(group: G): Boolean {
+        return delete(group.name)
     }
 }
