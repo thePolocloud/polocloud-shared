@@ -5,7 +5,7 @@ import com.google.gson.JsonObject
 import dev.httpmarco.polocloud.shared.PolocloudSharedKeys
 import dev.httpmarco.polocloud.shared.template.Template
 import dev.httpmarco.polocloud.shared.polocloudShared
-import dev.httpmarco.polocloud.v1.GroupType
+import dev.httpmarco.polocloud.v1.groups.GroupType
 import dev.httpmarco.polocloud.v1.services.ServiceSnapshot
 import dev.httpmarco.polocloud.v1.services.ServiceState
 

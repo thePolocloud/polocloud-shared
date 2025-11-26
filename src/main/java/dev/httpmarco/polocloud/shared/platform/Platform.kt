@@ -3,7 +3,7 @@ package dev.httpmarco.polocloud.shared.platform
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import dev.httpmarco.polocloud.shared.PolocloudSharedKeys
-import dev.httpmarco.polocloud.v1.GroupType
+import dev.httpmarco.polocloud.v1.groups.GroupType
 import dev.httpmarco.polocloud.v1.platform.PlatformSnapshot
 
 /**

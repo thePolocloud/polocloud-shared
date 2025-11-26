@@ -1,7 +1,7 @@
 package dev.httpmarco.polocloud.shared.service
 
 import dev.httpmarco.polocloud.shared.groups.Group
-import dev.httpmarco.polocloud.v1.GroupType
+import dev.httpmarco.polocloud.v1.groups.GroupType
 import dev.httpmarco.polocloud.v1.services.ServiceSnapshot
 import java.util.concurrent.CompletableFuture
 

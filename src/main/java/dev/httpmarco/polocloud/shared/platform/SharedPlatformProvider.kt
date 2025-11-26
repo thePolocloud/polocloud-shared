@@ -1,6 +1,6 @@
 package dev.httpmarco.polocloud.shared.platform
 
-import dev.httpmarco.polocloud.v1.GroupType
+import dev.httpmarco.polocloud.v1.groups.GroupType
 
 interface SharedPlatformProvider<P : Platform> {
 
