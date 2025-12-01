@@ -20,6 +20,9 @@ dependencies {
     compileOnly("dev.httpmarco.polocloud:proto:3.0.0-pre.8-SNAPSHOT")
 }
 
+kotlin {
+    jvmToolchain(21)
+}
 
 publishing {
     publications {
