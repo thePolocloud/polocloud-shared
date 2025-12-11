@@ -31,6 +31,16 @@ interface SharedPlayerProvider<P : PolocloudPlayer> {
     fun findByNameAsync(name: String): CompletableFuture<P?>
 
     /**
+     * Finds a player by their exact name.
+     */
+    fun findByUniqueId(name: UUID): P?
+
+    /**
+     * Asynchronously finds a player by name.
+     */
+    fun findByUniqueIdAsync(name: UUID): CompletableFuture<P?>
+
+    /**
      * Returns all players currently on a specific service.
      */
     fun findByService(serviceName: String): List<P>
