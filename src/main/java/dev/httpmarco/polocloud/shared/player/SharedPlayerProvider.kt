@@ -1,6 +1,7 @@
 package dev.httpmarco.polocloud.shared.player
 
 import dev.httpmarco.polocloud.shared.service.Service
+import java.util.UUID
 import java.util.concurrent.CompletableFuture
 
 /**
@@ -43,22 +44,22 @@ interface SharedPlayerProvider<P : PolocloudPlayer> {
     /**
      * Sends a message to the player with the given unique ID.
      */
-    fun messagePlayer(uniqueId: String, message: String): PlayerActorResponse
+    fun messagePlayer(uniqueId: UUID, message: String): PlayerActorResponse
 
     /**
      * Kicks the player with the given unique ID for the specified reason.
      */
-    fun kickPlayer(uniqueId: String, reason: String): PlayerActorResponse
+    fun kickPlayer(uniqueId: UUID, reason: String): PlayerActorResponse
 
     /**
      * Connects the player with the given unique ID to the specified service.
      */
-    fun connectPlayerToService(uniqueId: String, serviceName: String): PlayerActorResponse
+    fun connectPlayerToService(uniqueId: UUID, serviceName: String): PlayerActorResponse
 
     /**
      * Connects the player with the given unique ID to the specified service.
      */
-    fun connectPlayerToService(uniqueId: String, service: Service): PlayerActorResponse {
+    fun connectPlayerToService(uniqueId: UUID, service: Service): PlayerActorResponse {
         return connectPlayerToService(uniqueId, service.name())
     }
 }
