@@ -1,6 +1,7 @@
 package dev.httpmarco.polocloud.shared.player
 
 import dev.httpmarco.polocloud.shared.service.Service
+import dev.httpmarco.polocloud.v1.player.PlayerActorResponse
 import java.util.UUID
 import java.util.concurrent.CompletableFuture
 
