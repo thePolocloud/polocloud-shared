@@ -29,7 +29,8 @@ class PlayerSerializer : JsonSerializer<PolocloudPlayer>, JsonDeserializer<Poloc
         return JsonObject().apply {
             addProperty(PolocloudSharedKeys.UNIQUE_ID, src.uniqueId())
             addProperty(PolocloudSharedKeys.NAME, src.name)
-            addProperty(PolocloudSharedKeys.CURRENT_SERVER_NAME, src.currentServiceName)
+            addProperty(PolocloudSharedKeys.CURRENT_SERVER_NAME, src.currentServerName)
+            addProperty(PolocloudSharedKeys.CURRENT_PROXY_NAME, src.currentProxyName)
         }
     }
 
@@ -50,12 +51,13 @@ class PlayerSerializer : JsonSerializer<PolocloudPlayer>, JsonDeserializer<Poloc
 
         val uniqueId = UUID.fromString(obj.get(PolocloudSharedKeys.UNIQUE_ID).asString)
         val name = obj.get(PolocloudSharedKeys.NAME).asString
-        val currentService = obj.get(PolocloudSharedKeys.CURRENT_SERVER_NAME).asString
-
+        val currentServer = obj.get(PolocloudSharedKeys.CURRENT_SERVER_NAME).asString
+        val currentProxy = obj.get(PolocloudSharedKeys.CURRENT_PROXY_NAME).asString
         return PolocloudPlayer(
             name = name,
             uniqueId = uniqueId,
-            currentServiceName = currentService
+            currentServerName = currentServer,
+            currentProxyName = currentProxy
         )
     }
 }
