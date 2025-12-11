@@ -39,4 +39,26 @@ interface SharedPlayerProvider<P : PolocloudPlayer> {
     fun findByServiceAsync(service: Service): CompletableFuture<List<P>>
 
     fun playerCount(): Int
+
+    /**
+     * Sends a message to the player with the given unique ID.
+     */
+    fun messagePlayer(uniqueId: String, message: String): PlayerActorResponse
+
+    /**
+     * Kicks the player with the given unique ID for the specified reason.
+     */
+    fun kickPlayer(uniqueId: String, reason: String): PlayerActorResponse
+
+    /**
+     * Connects the player with the given unique ID to the specified service.
+     */
+    fun connectPlayerToService(uniqueId: String, serviceName: String): PlayerActorResponse
+
+    /**
+     * Connects the player with the given unique ID to the specified service.
+     */
+    fun connectPlayerToService(uniqueId: String, service: Service): PlayerActorResponse {
+        return connectPlayerToService(uniqueId, service.name())
+    }
 }
