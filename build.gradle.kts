@@ -8,6 +8,7 @@ group = "dev.httpmarco.polocloud"
 version = "3.0.0-pre.8-SNAPSHOT"
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven {
         name = "polocloud-snapshots"

@@ -1,6 +1,8 @@
 package dev.httpmarco.polocloud.shared.player
 
 import dev.httpmarco.polocloud.shared.service.Service
+import dev.httpmarco.polocloud.v1.player.PlayerActorResponse
+import java.util.UUID
 import java.util.concurrent.CompletableFuture
 
 /**
@@ -29,6 +31,16 @@ interface SharedPlayerProvider<P : PolocloudPlayer> {
     fun findByNameAsync(name: String): CompletableFuture<P?>
 
     /**
+     * Finds a player by their exact uuid.
+     */
+    fun findByUniqueId(uniqueId: UUID): P?
+
+    /**
+     * Asynchronously finds a player by uuid.
+     */
+    fun findByUniqueIdAsync(uniqueId: UUID): CompletableFuture<P?>
+
+    /**
      * Returns all players currently on a specific service.
      */
     fun findByService(serviceName: String): List<P>
@@ -39,4 +51,26 @@ interface SharedPlayerProvider<P : PolocloudPlayer> {
     fun findByServiceAsync(service: Service): CompletableFuture<List<P>>
 
     fun playerCount(): Int
+
+    /**
+     * Sends a message to the player with the given unique ID.
+     */
+    fun messagePlayer(uniqueId: UUID, message: String): PlayerActorResponse
+
+    /**
+     * Kicks the player with the given unique ID for the specified reason.
+     */
+    fun kickPlayer(uniqueId: UUID, reason: String): PlayerActorResponse
+
+    /**
+     * Connects the player with the given unique ID to the specified service.
+     */
+    fun connectPlayerToService(uniqueId: UUID, serviceName: String): PlayerActorResponse
+
+    /**
+     * Connects the player with the given unique ID to the specified service.
+     */
+    fun connectPlayerToService(uniqueId: UUID, service: Service): PlayerActorResponse {
+        return connectPlayerToService(uniqueId, service.name())
+    }
 }

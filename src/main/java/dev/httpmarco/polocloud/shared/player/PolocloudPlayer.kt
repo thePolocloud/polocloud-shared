@@ -10,12 +10,14 @@ import java.util.UUID
  *
  * @property name the name of the player
  * @property uniqueId the unique identifier (UUID) of the player
- * @property currentServiceName the name of the service the player is currently connected to
+ * @property currentServerName the name of the service the player is currently connected to
+ * @property currentProxyName the name of the proxy the player is currently connected to
  */
 open class PolocloudPlayer(
     val name: String,
     val uniqueId: UUID,
-    val currentServiceName: String
+    val currentServerName: String,
+    val currentProxyName: String
 ) {
 
     /**
@@ -35,7 +37,8 @@ open class PolocloudPlayer(
             return PolocloudPlayer(
                 name = snapshot.name,
                 uniqueId = UUID.fromString(snapshot.uniqueId),
-                currentServiceName = snapshot.currentServiceName
+                currentServerName = snapshot.currentServerName,
+                currentProxyName = snapshot.currentProxyName
             )
         }
     }
@@ -49,7 +52,8 @@ open class PolocloudPlayer(
         return PlayerSnapshot.newBuilder()
             .setName(name)
             .setUniqueId(uniqueId.toString())
-            .setCurrentServiceName(currentServiceName)
+            .setCurrentServerName(currentServerName)
+            .setCurrentProxyName(currentProxyName)
             .build()
     }
 }
@@ -63,6 +67,7 @@ fun PolocloudPlayer.toJson(): JsonObject {
     return JsonObject().apply {
         addProperty(PolocloudSharedKeys.NAME, name)
         addProperty(PolocloudSharedKeys.UNIQUE_ID, uniqueId.toString())
-        addProperty(PolocloudSharedKeys.CURRENT_SERVER_NAME, currentServiceName)
+        addProperty(PolocloudSharedKeys.CURRENT_SERVER_NAME, currentServerName)
+        addProperty(PolocloudSharedKeys.CURRENT_PROXY_NAME, currentProxyName)
     }
 }
