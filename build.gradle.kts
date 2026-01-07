@@ -1,11 +1,11 @@
 plugins {
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
-    kotlin("jvm") version "2.2.21"
+    kotlin("jvm") version "2.3.0"
     `maven-publish`
 }
 
 group = "dev.httpmarco.polocloud"
-version = "3.0.0-pre.8-SNAPSHOT"
+version = "3.0.0-pre.7-SNAPSHOT"
 
 repositories {
     mavenLocal()
