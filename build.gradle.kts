@@ -18,7 +18,7 @@ repositories {
 
 dependencies {
     compileOnly("com.google.code.gson:gson:2.13.2")
-    compileOnly("dev.httpmarco.polocloud:proto:3.0.0-pre.7-SNAPSHOT")
+    compileOnly("dev.httpmarco.polocloud:proto:$version")
 }
 
 kotlin {
