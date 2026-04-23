@@ -17,7 +17,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("com.google.code.gson:gson:2.13.2")
+    compileOnly("com.google.code.gson:gson:2.14.0")
     compileOnly("dev.httpmarco.polocloud:proto:$version")
 }
 
